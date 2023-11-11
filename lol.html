@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<video id='myvideo' width="320" height="240" controls>
+  Your browser does not support the video tag.
+</video>
+
+</body>
+</html>
+
+<script type="text/javascript">
+  fetch('.skibidi-toilet/skibidi%20toilet.mp4')
+  .then(res => res.blob()) // Gets the response and returns it as a blob
+  .then(blob => {
+    console.log(blob)
+    document.querySelector('myvideo').src = URL.createObjectURL(blob);
+});
+</script>
